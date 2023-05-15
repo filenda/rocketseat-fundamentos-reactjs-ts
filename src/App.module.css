@@ -1,0 +1,30 @@
+.wrapper {
+  /* TALK: if you look at the figma project the sum of the widths of all objects
+  equals to 1120. If you divide 1120ox by 16ox, you get 70rem
+  */
+  max-width: 70rem;
+  margin: 2rem auto;
+  /* TALK: this makes it more 'responsive' to smaller widths in the sense that
+  the wrapper won't touch the borders of the page whenever the user resizes 
+  it to less than 70rem */
+  padding: 0 1rem;
+
+  display: grid;
+  /* TALK: First grid column has a fixed width of 256px and the second
+  takes up as much as it is left 'fr = flexible, not fixed' */
+  grid-template-columns: 256px 1fr;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+@media (max-width: 768px) {
+  html{
+    /* TALK: This works because we are using 'rem' -aka relative measures - (the default font-size is 16px) */
+    font-size: 87.5%;
+  }
+
+  .wrapper {
+    /* TALK: For mobile screens (width < 768px) the grid will have only 1 column instead of 2 */
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,48 @@
+:root {
+  --white: #ffffff;
+  --gray-100: #e1e1e6;
+  --gray-200: #29292E;
+  --gray-300: #c4c4cc;
+  --gray-400: #8d8d99;
+  --gray-600: #323238;
+  --gray-700: #29292e;
+  --gray-800: #202024;
+  --gray-900: #121214;
+
+  --green-300: #00b37e;
+  --green-500: #00875f;
+
+  --red-500: #F75A68;
+}
+
+/* TALK: overrides default DOM object focus behavior */
+:focus {
+  outline: transparent;
+  box-shadow: 0 0 0 2px var(--green-500);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  /* This inverts the elements' padding, border, and margins logic so they don't expand, but squeeze instead */
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--gray-900);
+  color: var(--gray-300);
+  --webkit-font-smoothing: ; /* applies texture filtering to non default fonts of the system */
+}
+
+/* input, textarea and button do not inherit by default the body font 
+so you have to explicitly mention their like here */
+body,
+input,
+textarea,
+button {
+  font-family: "Roboto", sans-serif; /* This loads system default in case user machine doesn't have this font */
+  font-weight: 400;
+  /*Always use rem (relative) and not px (absolute) to make your site more accessible
+  By default, 1rem = 16px, (as long as the user didn't zoom in or out */
+  font-size: 1rem;
+}
